@@ -1,33 +1,32 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import { useRef } from "react";
+import { useDynamicFontSize } from "./hooks/useDynamicFontSize";
 
 function App() {
-  const [count, setCount] = useState(0);
+  // TODO: fix extra padding or style that's triggering scroll
+  const heroSectionRef = useRef(null);
+  const fontSize = useDynamicFontSize();
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <main className="grid h-screen w-screen items-center justify-center">
+      <div
+        ref={heroSectionRef}
+        className={`flex h-[10vh] flex-col items-center justify-center justify-items-center
+          `}
+      >
+        <h1
+          className="cursor-default select-none py-[5vw] text-center font-monument font-extrabold text-white"
+          style={{
+            textShadow: "0 0 10px rgba(255,255,255,0.15)",
+            fontSize: `${fontSize}px`,
+            transform: "scaleY(2)",
+            lineHeight: 0.8,
+          }}
+        >
+          <span className="first-name">JOHNNY</span>{" "}
+          <span className="last-name">MADIGAN</span>
+        </h1>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </main>
   );
 }
 
