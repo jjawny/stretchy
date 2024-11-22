@@ -7,10 +7,11 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        "dot-matrix": "radial-gradient(circle, #dadada 1px, transparent 1px)",
+        "dot-matrix":
+          "radial-gradient(circle, #dadada 0.5px, transparent 0.5px)",
       },
       backgroundSize: {
-        "dot-matrix": "30px 30px", // dot spacing
+        "dot-matrix": "11px 11px", // dot spacing
       },
       fontFamily: {
         syne: ["Syne", ...defaultTheme.fontFamily.serif],
