@@ -7,7 +7,7 @@ export const useDynamicFontSize = (initialSize = 33) => {
     const updateFontSize = () => {
       const vh = window.innerHeight * 0.01;
       const vw = window.innerWidth * 0.01;
-      setFontSize(Math.min(vh * 28, vw * 14));
+      setFontSize(Math.min(vh * 28, vw * 11));
     };
 
     updateFontSize();
