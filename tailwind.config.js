@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
@@ -8,6 +11,9 @@ export default {
       },
       backgroundSize: {
         "dot-matrix": "30px 30px", // dot spacing
+      },
+      fontFamily: {
+        syne: ["Syne", ...defaultTheme.fontFamily.serif],
       },
     },
   },
