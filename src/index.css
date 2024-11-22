@@ -28,12 +28,8 @@ a:hover {
   color: #535bf2;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+html {
+  @apply bg-dot-matrix;
 }
 
 @media (prefers-color-scheme: light) {
