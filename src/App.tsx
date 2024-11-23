@@ -1,4 +1,4 @@
-import { useDynamicFontSize } from "./hooks/useDynamicFontSize";
+import { useDynamicFontSize } from "~/hooks/useDynamicFontSize";
 
 function App() {
   const fontSize = useDynamicFontSize();
