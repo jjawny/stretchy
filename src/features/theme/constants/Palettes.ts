@@ -6,7 +6,7 @@ export const lightPalette: PaletteOptions = {
     paper: "#ffffff",
   },
   text: {
-    primary: "#000000",
+    primary: "#1B1B1B",
     secondary: "#555555",
   },
 };

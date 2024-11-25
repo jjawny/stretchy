@@ -1,6 +1,6 @@
-import Hero from "~/Hero";
-import ThemeButton from "~/ThemeButton";
-import MuiThemeWrapper from "./MuiThemeWrapper";
+import Hero from "~/features/hero/components/Hero";
+import ThemeButton from "~/features/theme/components/ThemeButton";
+import MuiThemeWrapper from "./features/theme/components/MuiThemeWrapper";
 
 function App() {
   return (

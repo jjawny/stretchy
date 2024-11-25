@@ -1,7 +1,7 @@
 import { Tooltip } from "@mui/material";
 import toast from "react-hot-toast";
-import { ThemeChoices } from "~/enums/Theme";
-import { useTheme } from "~/hooks/useTheme";
+import { ThemeChoices } from "~/features/theme/enums/Theme";
+import { useTheme } from "~/features/theme/hooks/useTheme";
 
 const ThemeButton = () => {
   const { theme, toggleTheme } = useTheme();

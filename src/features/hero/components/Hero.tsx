@@ -1,5 +1,5 @@
-import { useDynamicFontSize } from "~/hooks/useDynamicFontSize";
-import { useGlitchyTextAnimation } from "~/hooks/useGlitchyTextAnimation";
+import { useDynamicFontSize } from "~/features/hero/hooks/useDynamicFontSize";
+import { useGlitchyTextAnimation } from "~/features/hero/hooks/useGlitchyTextAnimation";
 
 const Hero = () => {
   const first = "JOHNNY";

@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { Theme } from "~/enums/Theme";
+import { Theme } from "~/features/theme/enums/Theme";
 
 export const LOCAL_STORAGE_KEY = "stretchy-preferences";
 
