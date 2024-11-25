@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { Theme } from "~/features/theme/enums/Theme";
 
-export const LOCAL_STORAGE_KEY = "stretchy-preferences";
+export const LOCAL_STORAGE_KEY = "stretchy-user-preferences";
 
 type UserPreferences = {
   theme: Theme;
