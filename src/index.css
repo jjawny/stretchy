@@ -24,11 +24,11 @@ a:hover {
 }
 
 .first-name {
-  @apply h-24 hover:drop-shadow-[0_0_2em_#646cffaa];
+  @apply h-24 hover:drop-shadow-[0_0_1.5em_#f189ffaa];
   transition: filter 300ms;
 }
 
 .last-name {
-  @apply h-24 hover:drop-shadow-[0_0_2em_#61dafbaa];
+  @apply h-24 hover:drop-shadow-[0_0_1.5em_#00ffffaa];
   transition: filter 300ms;
 }
