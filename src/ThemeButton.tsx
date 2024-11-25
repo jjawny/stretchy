@@ -22,7 +22,7 @@ const ThemeButton = () => {
       <button
         onClick={(e) => handleOnClick(e)}
         aria-label={`Switch theme, current theme is ${theme}`}
-        className="absolute bottom-10 right-10 w-16 rounded-md border border-solid border-stone-300 bg-stone-100 px-1 text-xs text-black transition-all duration-200 hover:bg-stone-300"
+        className="absolute bottom-10 right-10 w-16 select-none rounded-md border border-solid border-stone-300 bg-stone-100 px-1 text-xs text-black transition-all duration-200 hover:bg-stone-300"
       >
         {theme}
       </button>
