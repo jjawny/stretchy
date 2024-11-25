@@ -1,7 +1,12 @@
 import { useDynamicFontSize } from "~/hooks/useDynamicFontSize";
+import { useGlitchyTextAnimation } from "~/hooks/useGlitchyTextAnimation";
 
 const Hero = () => {
+  const first = "JOHNNY";
+  const last = "MADIGAN";
   const fontSize = useDynamicFontSize();
+  const { currentText: firstText } = useGlitchyTextAnimation(first, 0.2, true);
+  const { currentText: lastText } = useGlitchyTextAnimation(last, 0.1, true);
 
   return (
     <div className={`flex h-fit flex-col items-center justify-center justify-items-center`}>
@@ -14,7 +19,7 @@ const Hero = () => {
           lineHeight: 0.75,
         }}
       >
-        <span className="first-name">JOHNNY</span> <span className="last-name">MADIGAN</span>
+        <span className="first-name">{firstText}</span> <span className="last-name">{lastText}</span>
       </h1>
     </div>
   );
