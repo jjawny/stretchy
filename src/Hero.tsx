@@ -11,7 +11,7 @@ const Hero = () => {
   return (
     <div className={`flex h-fit flex-col items-center justify-center justify-items-center`}>
       <h1
-        className="cursor-default select-none text-center font-syne font-extrabold text-white"
+        className="cursor-default select-none text-center font-syne font-extrabold"
         style={{
           textShadow: "0 0 10px rgba(255,255,255,0.15)",
           fontSize: `${fontSize}px`,
