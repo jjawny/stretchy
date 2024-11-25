@@ -3,3 +3,5 @@ export enum Theme {
   Dark = "dark",
   System = "system",
 }
+
+export const ThemeChoices = Object.values(Theme);
