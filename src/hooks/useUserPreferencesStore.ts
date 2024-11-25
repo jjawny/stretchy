@@ -21,6 +21,7 @@ const loadPreviouslySaved = (): UserPreferences => {
     if (savedJSON) {
       const saved = JSON.parse(savedJSON) as UserPreferences;
       console.debug("Successfully loaded your previously saved preferences:", saved);
+      res = saved;
     }
   } catch (err) {
     console.warn("Failed to load your previously saved preferences:", err);
@@ -30,6 +31,11 @@ const loadPreviouslySaved = (): UserPreferences => {
   }
 };
 
+/**
+ * FYI:
+ *  - Simple example does not include, debouncing/throttling LocalStorage writes with saving states for UI
+ *  - As UserPreferences is saved in LocalStorage, this is considered external/async state and should be managed by ReactQuery instead
+ */
 export const useUserPreferencesStore = create<UserPreferencesStoreType>((set) => ({
   userPreferences: loadPreviouslySaved(),
   setUserPreferences: (key, value) =>
