@@ -55,6 +55,7 @@ export const useMuiTheme = () => {
                   backgroundImage: `radial-gradient(circle, ${isDarkMode ? "#404040" : "#dadada"}  0.5px, transparent 0.5px)`, // dots
                   backgroundSize: "11px 11px", // dot spacing
                   backgroundColor: isDarkMode ? "#252423" : "#f7f7f7",
+                  transition: "background-color 0.2s ease-in-out",
                 },
               };
             },
