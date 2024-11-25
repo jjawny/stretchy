@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { Theme } from "~/features/theme/enums/Theme";
 
-export const LOCAL_STORAGE_KEY = "stretchy-user-preferences";
+export const LOCAL_STORAGE_KEY = "STRETCHY_USER_PREFERENCES";
 
 type UserPreferences = {
   theme: Theme;
@@ -33,8 +33,8 @@ const loadPreviouslySaved = (): UserPreferences => {
 
 /**
  * FYI:
- *  - Simple example does not include, debouncing/throttling LocalStorage writes with saving states for UI
- *  - As UserPreferences is saved in LocalStorage, this is considered external/async state and should be managed by ReactQuery instead
+ *  - Simple example does not include debouncing/throttling LocalStorage writes
+ *  - Bc saved in LocalStorage, it is considered external/async state and should be managed by ReactQuery instead
  */
 export const useUserPreferencesStore = create<UserPreferencesStoreType>((set) => ({
   userPreferences: loadPreviouslySaved(),
