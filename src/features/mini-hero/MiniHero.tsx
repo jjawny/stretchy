@@ -47,7 +47,7 @@ const MiniHero: React.FC<MiniHeroProps> = (props) => {
   const textFragment = useMemo(() => {
     return (
       <h3
-        className="text-center font-syne text-yellow-600"
+        className="font-graffiti text-center text-yellow-600"
         style={{
           textShadow: "0 0 10px rgba(255,255,255,0.15)",
           fontSize: `${fontSize}px`,
