@@ -1,13 +1,21 @@
 import { Tooltip } from "@mui/material";
+import { ClassValue } from "clsx";
 import toast from "react-hot-toast";
 import { ThemeChoices } from "~/features/theme/enums/Theme";
 import { useTheme } from "~/features/theme/hooks/useTheme";
 import { resolveThemeIcon } from "~/features/theme/utils/theme-utils";
+import { cn } from "~/shared/classname.utils";
+import SimpleButton from "~/shared/SimpleButton";
 
-const ThemeButton = () => {
+type ThemeButtonProps = {
+  className?: ClassValue;
+};
+
+const ThemeButton: React.FC<ThemeButtonProps> = (props) => {
+  const { className } = props;
   const { theme, toggleTheme } = useTheme();
 
-  const handleOnClick = (_: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const handleOnClick = (_: React.MouseEvent<HTMLButtonElement, MouseEvent> | undefined) => {
     const currThemeIndex = ThemeChoices.indexOf(theme);
 
     if (currThemeIndex < 0) {
@@ -21,13 +29,13 @@ const ThemeButton = () => {
 
   return (
     <Tooltip title={`I'm begging you to change me from ${theme}`}>
-      <button
-        onClick={(e) => handleOnClick(e)}
-        aria-label={`Switch theme, current theme is ${theme}`}
-        className="absolute bottom-10 right-10 w-16 select-none rounded-md border border-solid border-stone-300 bg-stone-100 px-1 text-xs text-black transition-all duration-200 hover:bg-stone-300"
+      <SimpleButton
+        onClickCallback={handleOnClick}
+        ariaLabel={`Switch theme, current theme is ${theme}`}
+        className={cn(className)}
       >
         {resolveThemeIcon(theme)}
-      </button>
+      </SimpleButton>
     </Tooltip>
   );
 };
