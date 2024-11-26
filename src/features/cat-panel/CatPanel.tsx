@@ -6,17 +6,17 @@ import Draggable from "react-draggable";
 import toast from "react-hot-toast";
 import { PiResize as ResetIcon } from "react-icons/pi";
 import { TfiHandDrag as DragIcon } from "react-icons/tfi";
-import { DEFAULT_SIZE } from "~/features/mini-hero/mini-hero.constants";
-import { useResizeDimensions } from "~/features/mini-hero/useResizeDimensions";
+import { DEFAULT_SIZE } from "~/features/cat-panel/cat-panel.constants";
+import { useResizeDimensions } from "~/features/cat-panel/useResizeDimensions";
 import { cn } from "~/shared/classname.utils";
 import SimpleButton from "~/shared/SimpleButton";
 import { useDynamicFontSize } from "~/shared/useDynamicFontSize";
 
-type MiniHeroProps = {
+type CatPanelProps = {
   className?: ClassValue;
 };
 
-const MiniHero: React.FC<MiniHeroProps> = (props) => {
+const CatPanel: React.FC<CatPanelProps> = (props) => {
   const { className } = props;
   const suppressDraggableConsoleErrorRef = useRef(null); // Known issue, see https://github.com/react-grid-layout/react-draggable/issues/749#issuecomment-2098538949
   const containerRef = useRef(null);
@@ -121,4 +121,4 @@ const MiniHero: React.FC<MiniHeroProps> = (props) => {
   );
 };
 
-export default MiniHero;
+export default CatPanel;
