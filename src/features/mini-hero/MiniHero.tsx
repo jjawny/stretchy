@@ -26,7 +26,7 @@ const MiniHero: React.FC<MiniHeroProps> = (props) => {
   };
 
   return (
-    <Resizable size={mappedSize} minWidth={100} minHeight={100} onResizeStop={handleResize} className={cn(className)}>
+    <Resizable size={mappedSize} minWidth={100} minHeight={150} onResizeStop={handleResize} className={cn(className)}>
       <div className="flex h-full w-full flex-col rounded-md bg-yellow-300">
         <div className="flex">
           <div className="flex-grow">handle here</div>
@@ -49,7 +49,17 @@ const MiniHero: React.FC<MiniHeroProps> = (props) => {
             BIG STRETCH
           </h3>
         </div>
-        <div>cat here</div>
+        {/* TODO: try out text affect like Glitche/eeaao end credits */}
+        <div className="h-20 w-full">
+          <img
+            src="/cat.png"
+            alt="A cat stretching"
+            style={{
+              width: "100%",
+              height: "100%",
+            }}
+          />
+        </div>
       </div>
     </Resizable>
   );
