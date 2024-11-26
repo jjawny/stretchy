@@ -27,23 +27,29 @@ const MiniHero: React.FC<MiniHeroProps> = (props) => {
 
   return (
     <Resizable size={mappedSize} minWidth={100} minHeight={100} onResizeStop={handleResize} className={cn(className)}>
-      <div ref={containerRef} className="relative grid h-full w-full place-content-center rounded-md bg-amber-300">
-        <Tooltip title={`Reset position`}>
-          <SimpleButton onClickCallback={() => setSizeDirectly(DEFAULT_SIZE)} className="absolute right-2 top-2 w-fit">
-            <ResetIcon />
-          </SimpleButton>
-        </Tooltip>
-        <h3
-          className="text-center font-syne text-black"
-          style={{
-            textShadow: "0 0 10px rgba(255,255,255,0.15)",
-            fontSize: `${fontSize}px`,
-            transform: "scaleY(2)",
-            lineHeight: 0.75,
-          }}
-        >
-          BIG STRETCH
-        </h3>
+      <div className="flex h-full w-full flex-col rounded-md bg-yellow-300">
+        <div className="flex">
+          <div className="flex-grow">handle here</div>
+          <Tooltip title="Reset my position">
+            <SimpleButton onClickCallback={() => setSizeDirectly(DEFAULT_SIZE)} className="w-fit">
+              <ResetIcon />
+            </SimpleButton>
+          </Tooltip>
+        </div>
+        <div ref={containerRef} className="grid flex-grow place-content-center">
+          <h3
+            className="text-center font-syne text-black"
+            style={{
+              textShadow: "0 0 10px rgba(255,255,255,0.15)",
+              fontSize: `${fontSize}px`,
+              transform: "scaleY(2)",
+              lineHeight: 0.75,
+            }}
+          >
+            BIG STRETCH
+          </h3>
+        </div>
+        <div>cat here</div>
       </div>
     </Resizable>
   );
