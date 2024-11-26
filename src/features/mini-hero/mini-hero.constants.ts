@@ -1,3 +1,3 @@
 import { NumberSize } from "re-resizable";
 
-export const DEFAULT_SIZE: NumberSize = { width: 320, height: 200 };
+export const DEFAULT_SIZE: NumberSize = { width: 150, height: 150 };
