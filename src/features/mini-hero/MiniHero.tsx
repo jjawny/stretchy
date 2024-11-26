@@ -1,8 +1,9 @@
 import { Tooltip } from "@mui/material";
 import { ClassValue } from "clsx";
 import { NumberSize, Resizable } from "re-resizable";
-import { useMemo, useRef } from "react";
+import { useCallback, useMemo, useRef } from "react";
 import Draggable from "react-draggable";
+import toast from "react-hot-toast";
 import { PiResize as ResetIcon } from "react-icons/pi";
 import { TfiHandDrag as DragIcon } from "react-icons/tfi";
 import { DEFAULT_SIZE } from "~/features/mini-hero/mini-hero.constants";
@@ -21,6 +22,11 @@ const MiniHero: React.FC<MiniHeroProps> = (props) => {
   const containerRef = useRef(null);
   const fontSize = useDynamicFontSize(containerRef);
   const { size, handleResize, setSizeDirectly } = useResizeDimensions();
+
+  const handleResetSizeClick = useCallback(() => {
+    toast.success("Size reset!");
+    setSizeDirectly(DEFAULT_SIZE);
+  }, [setSizeDirectly]);
 
   // Separate tech-specific Resize type from saved type
   const mappedSize: NumberSize = {
@@ -57,12 +63,12 @@ const MiniHero: React.FC<MiniHeroProps> = (props) => {
   const resetDimensionsFragment = useMemo(() => {
     return (
       <Tooltip title="Reset my size">
-        <SimpleButton onClickCallback={() => setSizeDirectly(DEFAULT_SIZE)} className="w-fit">
+        <SimpleButton onClickCallback={handleResetSizeClick} className="w-fit">
           <ResetIcon />
         </SimpleButton>
       </Tooltip>
     );
-  }, [setSizeDirectly]);
+  }, [handleResetSizeClick]);
 
   return (
     // TODO: new hook to save position to LocalStorage

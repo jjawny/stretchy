@@ -19,7 +19,7 @@ const ThemeButton: React.FC<ThemeButtonProps> = (props) => {
     const currThemeIndex = ThemeChoices.indexOf(theme);
 
     if (currThemeIndex < 0) {
-      toast.error("No other themes found.");
+      toast.error("No other themes found");
       return;
     }
 
