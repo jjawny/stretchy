@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        syne: ["Syne", ...defaultTheme.fontFamily.serif],
+        graffiti: ["Sedgwick Ave Display", ...defaultTheme.fontFamily.sans],
       },
     },
   },
