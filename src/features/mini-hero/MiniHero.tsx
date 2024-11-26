@@ -30,7 +30,7 @@ const MiniHero: React.FC<MiniHeroProps> = (props) => {
 
   const dragHandlerFragment = () => {
     return (
-      <strong className="flex-grow cursor-move rounded-md border border-solid border-stone-300 bg-stone-100">
+      <strong className="flex-grow cursor-grab rounded-md border border-solid border-stone-300 bg-stone-100">
         <p className="flex flex-nowrap gap-2 whitespace-nowrap text-xs text-stone-400">
           <DragIcon className="invert" /> Hold to drag...
         </p>
@@ -69,7 +69,7 @@ const MiniHero: React.FC<MiniHeroProps> = (props) => {
       <div ref={suppressDraggableConsoleErrorRef}>
         <Resizable
           size={mappedSize}
-          minWidth={100}
+          minWidth={150}
           minHeight={150}
           onResizeStop={handleResize}
           className={cn(className)}
