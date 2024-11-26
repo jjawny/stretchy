@@ -41,7 +41,7 @@ const MiniHero: React.FC<MiniHeroProps> = (props) => {
   const textFragment = useMemo(() => {
     return (
       <h3
-        className="text-center font-syne text-black"
+        className="text-center font-syne text-yellow-600"
         style={{
           textShadow: "0 0 10px rgba(255,255,255,0.15)",
           fontSize: `${fontSize}px`,
@@ -65,6 +65,7 @@ const MiniHero: React.FC<MiniHeroProps> = (props) => {
   }, [setSizeDirectly]);
 
   return (
+    // TODO: new hook to save position to LocalStorage
     <Draggable handle="strong" nodeRef={suppressDraggableConsoleErrorRef}>
       <div ref={suppressDraggableConsoleErrorRef}>
         <Resizable
