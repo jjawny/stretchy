@@ -1,9 +1,9 @@
 import { Tooltip } from "@mui/material";
 import { ClassValue } from "clsx";
 import toast from "react-hot-toast";
-import { ThemeChoices } from "~/features/theme/enums/Theme";
-import { useTheme } from "~/features/theme/hooks/useTheme";
-import { resolveThemeIcon } from "~/features/theme/utils/theme-utils";
+import { ThemeChoices } from "~/features/theme/Theme.enum";
+import { resolveThemeIcon } from "~/features/theme/theme.utils";
+import { useTheme } from "~/features/theme/useTheme";
 import { cn } from "~/shared/classname.utils";
 import SimpleButton from "~/shared/SimpleButton";
 

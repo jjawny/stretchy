@@ -1,4 +1,4 @@
-import { Theme } from "~/features/theme/enums/Theme";
+import { Theme } from "~/features/theme/Theme.enum";
 import { useUserPreferencesStore } from "~/shared/useUserPreferencesStore";
 
 export const useTheme = () => {

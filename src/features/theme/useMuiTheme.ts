@@ -1,8 +1,8 @@
 import { createTheme, PaletteOptions } from "@mui/material/styles";
 import { useEffect, useMemo, useState } from "react";
-import { darkPalette, lightPalette } from "~/features/theme/constants/Palettes";
-import { Theme } from "~/features/theme/enums/Theme";
-import { useTheme } from "~/features/theme/hooks/useTheme";
+import { darkPalette, lightPalette } from "~/features/theme/palette.constants";
+import { Theme } from "~/features/theme/Theme.enum";
+import { useTheme } from "~/features/theme/useTheme";
 
 /**
  * Resolves app's theme managed separately via chosen tech (Zustand/ReactQuery/etc)

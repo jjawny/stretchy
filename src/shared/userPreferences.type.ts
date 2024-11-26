@@ -1,6 +1,6 @@
 import * as Yup from "yup";
 import { DEFAULT_SIZE } from "~/features/cat-panel/cat-panel.constants";
-import { Theme } from "~/features/theme/enums/Theme";
+import { Theme } from "~/features/theme/Theme.enum";
 export const userPreferencesSchema = Yup.object({
   theme: Yup.string().oneOf(Object.values(Theme)).defined(),
   miniHeroSize: Yup.object({

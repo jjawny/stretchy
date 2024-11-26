@@ -1,6 +1,6 @@
 import { HiCog as SystemModeIcon } from "react-icons/hi";
 import { WiMoonAltWaxingCrescent1 as DarkModeIcon, WiMoonAltWaxingGibbous5 as LightModeIcon } from "react-icons/wi";
-import { Theme } from "~/features/theme/enums/Theme";
+import { Theme } from "~/features/theme/Theme.enum";
 
 export const resolveThemeIcon = (theme: Theme): React.ReactNode => {
   switch (theme) {

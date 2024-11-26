@@ -1,8 +1,8 @@
 import { Toaster } from "react-hot-toast";
 import CatPanel from "~/features/cat-panel/CatPanel";
 import Hero from "~/features/hero/Hero";
-import MuiThemeWrapper from "~/features/theme/components/MuiThemeWrapper";
-import ThemeButton from "~/features/theme/components/ThemeButton";
+import MuiThemeWrapper from "~/features/theme/MuiThemeWrapper";
+import ThemeButton from "~/features/theme/ThemeButton";
 
 function App() {
   return (
