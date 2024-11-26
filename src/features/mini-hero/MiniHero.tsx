@@ -3,7 +3,7 @@ import { ClassValue } from "clsx";
 import { NumberSize, Resizable } from "re-resizable";
 import { useMemo, useRef } from "react";
 import Draggable from "react-draggable";
-import { IoArrowUndo as ResetIcon } from "react-icons/io5";
+import { PiResize as ResetIcon } from "react-icons/pi";
 import { TfiHandDrag as DragIcon } from "react-icons/tfi";
 import { DEFAULT_SIZE } from "~/features/mini-hero/mini-hero.constants";
 import { useResizeDimensions } from "~/features/mini-hero/useResizeDimensions";
@@ -31,7 +31,7 @@ const MiniHero: React.FC<MiniHeroProps> = (props) => {
   const dragHandlerFragment = () => {
     return (
       <strong className="flex-grow cursor-grab rounded-md border border-solid border-stone-300 bg-stone-100">
-        <p className="flex flex-nowrap gap-2 whitespace-nowrap text-xs text-stone-400">
+        <p className="flex flex-nowrap gap-2 whitespace-nowrap text-xs text-gray-300">
           <DragIcon className="invert" /> Hold to drag...
         </p>
       </strong>
@@ -56,7 +56,7 @@ const MiniHero: React.FC<MiniHeroProps> = (props) => {
 
   const resetDimensionsFragment = useMemo(() => {
     return (
-      <Tooltip title="Reset my dimensions">
+      <Tooltip title="Reset my size">
         <SimpleButton onClickCallback={() => setSizeDirectly(DEFAULT_SIZE)} className="w-fit">
           <ResetIcon />
         </SimpleButton>
@@ -82,13 +82,27 @@ const MiniHero: React.FC<MiniHeroProps> = (props) => {
             <div ref={containerRef} className="grid flex-grow place-content-center">
               {textFragment}
             </div>
-            {/* TODO: try out text affect like Glitche/eeaao end credits */}
-            <div className="h-20 w-full select-none">
+            <div className="flex h-8 w-full select-none flex-nowrap">
               <img
-                src="/cat.png"
+                src="/cat-end.png"
+                alt="A cat stretching"
+                style={{
+                  height: "100%",
+                }}
+              />
+              <img
+                src="/cat-middle.png"
                 alt="A cat stretching"
                 style={{
                   width: "100%",
+                  height: "100%",
+                  flexGrow: "1",
+                }}
+              />
+              <img
+                src="/cat-start.png"
+                alt="A cat stretching"
+                style={{
                   height: "100%",
                 }}
               />
