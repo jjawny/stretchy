@@ -14,15 +14,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 .first-name {
   @apply h-24 hover:drop-shadow-[0_0_1.5em_#f189ffaa];
   transition: filter 300ms;
