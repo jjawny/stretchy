@@ -1,5 +1,5 @@
 import { Theme } from "~/features/theme/enums/Theme";
-import { useUserPreferencesStore } from "~/shared/hooks/useUserPreferencesStore";
+import { useUserPreferencesStore } from "~/shared/useUserPreferencesStore";
 
 export const useTheme = () => {
   const theme = useUserPreferencesStore((state) => state.userPreferences.theme);
