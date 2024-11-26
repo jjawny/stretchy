@@ -1,7 +1,9 @@
 import { create } from "zustand";
+import { throttle } from "~/shared/no-lodash.utils";
 import { DEFAULT_USER_PREFERENCES, UserPreferences, userPreferencesSchema } from "~/shared/userPreferences.type";
 
 export const LOCAL_STORAGE_KEY = "STRETCHY_USER_PREFERENCES";
+const THROTTLE_PERSIST_TO_LOCAL_STORAGE_MS = 1000;
 
 type UserPreferencesStoreType = {
   userPreferences: UserPreferences;
@@ -32,6 +34,10 @@ const loadPreviouslySaved = async (): Promise<UserPreferences> => {
   }
 };
 
+const throttledPersistToLocalStorage = throttle((nextData: UserPreferences) => {
+  localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(nextData));
+}, THROTTLE_PERSIST_TO_LOCAL_STORAGE_MS);
+
 /**
  * FYI: Bc saved in LocalStorage, it is considered external/async state and should be managed by ReactQuery (if installed)
  */
@@ -40,10 +46,7 @@ export const useUserPreferencesStore = create<UserPreferencesStoreType>((set) =>
   setUserPreferences: (key, value) =>
     set((state) => {
       const nextData = { ...state.userPreferences, [key]: value };
-
-      // TODO: throttle
-      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(nextData));
-
+      throttledPersistToLocalStorage(nextData);
       return { ...state, userPreferences: nextData };
     }),
 }));
