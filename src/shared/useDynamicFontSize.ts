@@ -10,7 +10,8 @@ export const useDynamicFontSize = (containerRef: RefObject<HTMLElement> | null, 
     const updateFontSize = () => {
       if (!containerRef?.current) return;
       const { offsetWidth, offsetHeight } = containerRef.current;
-      const calculatedFontSize = Math.min(offsetWidth * 0.1, offsetHeight * 0.2);
+      // TODO: allow multipliers as params, or somehow detect font-size height...
+      const calculatedFontSize = Math.min(offsetWidth * 0.15, offsetHeight * 0.2);
       setFontSize(calculatedFontSize);
     };
 
